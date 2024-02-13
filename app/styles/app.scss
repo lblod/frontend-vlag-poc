@@ -109,3 +109,9 @@
 @import "@appuniversum/ember-appuniversum/styles/utilities/u-spacings";
 @import "@appuniversum/ember-appuniversum/styles/utilities/u-visible";
 @import "@appuniversum/ember-appuniversum/styles/utilities/u-widths";
+
+.leaflet-container {
+  height: 80vh;
+  width: 50vw;
+  margin: 0 1em;
+}
