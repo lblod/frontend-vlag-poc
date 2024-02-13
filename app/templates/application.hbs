@@ -1,7 +1,39 @@
-{{page-title "EmberQuickstart"}}
+{{page-title "VLAG Frontend"}}
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<AuApp>
+  <AuMainHeader
+    @brandLink="https://www.vlaanderen.be/nl"
+    @homeRoute="application"
+    @appTitle="Frontend VLAG POC"
+    @contactRoute="application"
+  >
+    <AuDropdown @title="Aangemeld als ..." @alignment="right" role="menu">
+      <AuButton @skin="link" role="menuitem">
+        <AuIcon @icon="logout" @alignment="left" />Afmelden
+      </AuButton>
+    </AuDropdown>
+  </AuMainHeader>
+  <AuToolbar @size="medium" @skin="tint" @border="bottom" as |Group|>
+    <Group>
+      <ul class="au-c-list-horizontal au-c-list-horizontal--small">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="index" @icon="arrow-left">
+            Overzicht modules
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          Test
+        </li>
+      </ul>
+    </Group>
+  </AuToolbar>
+  <AuMainContainer as |m|>
+    <m.content @scroll={{true}}>
+      <div class="au-d-component-block au-d-component-block--overflow">
+        Main content
+      </div>
+    </m.content>
+  </AuMainContainer>
+</AuApp>
 
 {{outlet}}
