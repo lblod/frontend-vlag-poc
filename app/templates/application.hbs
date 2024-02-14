@@ -22,15 +22,18 @@
           </AuLink>
         </li>
         <li class="au-c-list-horizontal__item">
-          Test
+          Locations
         </li>
       </ul>
     </Group>
   </AuToolbar>
   <AuMainContainer as |m|>
     <m.content @scroll={{true}}>
-      <div class="au-d-component-block au-d-component-block--overflow">
-        Main content
+      <div
+        class="au-d-component-block au-d-component-block--overflow leaflet-container"
+      >
+        {{! add content here }}
+        <LocationsMap />
       </div>
     </m.content>
   </AuMainContainer>
