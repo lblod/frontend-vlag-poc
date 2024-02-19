@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 
 export default class LocationsMapComponent extends Component {
   get zoom() {
-    return this.args.baseZoom || 20;
+    return this.args.baseZoom || 12;
   }
 
   get lat() {
