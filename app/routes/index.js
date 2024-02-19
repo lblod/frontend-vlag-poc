@@ -10,12 +10,10 @@ export default class IndexRoute extends Route {
     points = await points.json();
 
     const mod = [];
-    console.log(points);
 
     for (const point of points.data) {
       let r = await fetch(point.relationships.signs.links.self);
       r = await r.json();
-      console.log(r);
       mod.push({
         lat: point.attributes.latitude,
         long: point.attributes.longitude,
@@ -25,7 +23,6 @@ export default class IndexRoute extends Route {
         },
       });
     }
-    console.log(mod);
     return mod;
   }
 }
