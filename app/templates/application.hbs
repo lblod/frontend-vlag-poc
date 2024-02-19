@@ -29,14 +29,7 @@
   </AuToolbar>
   <AuMainContainer as |m|>
     <m.content @scroll={{true}}>
-      <div
-        class="au-d-component-block au-d-component-block--overflow leaflet-container"
-      >
-        {{! add content here }}
-        <LocationsMap />
-      </div>
+      {{outlet}}
     </m.content>
   </AuMainContainer>
 </AuApp>
-
-{{outlet}}
