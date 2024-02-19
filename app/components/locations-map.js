@@ -13,7 +13,7 @@ export default class LocationsMapComponent extends Component {
     return this.args.baseLng || 4.42281;
   }
 
-  get vacLocation() {
-    return [51.213596, 4.42281];
+  vacLocation(item) {
+    return [item.lat, item.long];
   }
 }
