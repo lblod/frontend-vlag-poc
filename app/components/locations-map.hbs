@@ -7,8 +7,8 @@
   {{#each @vacLocation as |item|}}
     <layers.marker @lat={{item.lat}} @lng={{item.long}} as |marker|>
       <marker.popup>
-        <h3>{{item.sign.label}}</h3>
-        <img src={{item.sign.image}} />
+        <h3>{{item.sign.label}} ({{item.lat}},{{item.long}})</h3>
+        <img width="48" height="48" src={{item.sign.image}} />
       </marker.popup>
     </layers.marker>
   {{/each}}
