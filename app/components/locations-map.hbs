@@ -4,12 +4,13 @@
     @url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
   />
 
-  <layers.marker @location={{this.vacLocation}} as |marker|>
-    <marker.popup>
-      <h3>VAC Antwerpen</h3>
-      Lange Kievitstraat 111/113<br />
-      2018 Antwerpen
-    </marker.popup>
-  </layers.marker>
+  {{#each @vacLocation as |item|}}
+    <layers.marker @lat={{item.lat}} @lng={{item.long}} as |marker|>
+      <marker.popup>
+        <h3>{{item.sign.label}}</h3>
+        <img src={{item.sign.image}} />
+      </marker.popup>
+    </layers.marker>
+  {{/each}}
 
 </LeafletMap>
