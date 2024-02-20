@@ -4,11 +4,12 @@
     @url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
   />
 
-  {{#each @vacLocation as |item|}}
-    <layers.marker @lat={{item.lat}} @lng={{item.long}} as |marker|>
+  {{#each @geopoints as |point|}}
+    <layers.marker @lat={{point.latitude}} @lng={{point.longitude}} as |marker|>
       <marker.popup>
-        <h3>{{item.sign.label}} ({{item.lat}},{{item.long}})</h3>
-        <img width="48" height="48" src={{item.sign.image}} />
+        <h2>{{point.signs.label}}
+          ({{point.latitude}},{{point.longitude}})</h2>
+        <img width="48" height="48" src={{point.signs.image}} />
       </marker.popup>
     </layers.marker>
   {{/each}}

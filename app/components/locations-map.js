@@ -12,8 +12,4 @@ export default class LocationsMapComponent extends Component {
   get lng() {
     return this.args.baseLng || 4.42281;
   }
-
-  vacLocation(item) {
-    return [item.lat, item.long];
-  }
 }
