@@ -5,8 +5,7 @@ export default class IndexRoute extends Route {
   @service router;
   @service store;
 
-  async model() {
-    let geopoints = await this.store.findAll("geopoint");
-    return geopoints;
+  model() {
+    return this.store.findAll("geopoint", { include: "signs" });
   }
 }

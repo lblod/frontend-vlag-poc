@@ -5,12 +5,13 @@
   />
 
   {{#each @geopoints as |point|}}
-    {{log point.signs.length}}
     <layers.marker @lat={{point.latitude}} @lng={{point.longitude}} as |marker|>
       <marker.popup>
-        <h2>{{point.signs.label}}
-          ({{point.latitude}},{{point.longitude}})</h2>
-        <img width="48" height="48" src={{point.signs.image}} />
+        {{#each point.signs as |sign|}}
+          <h2>{{sign.label}}
+            ({{point.latitude}},{{point.longitude}})</h2>
+          <img width="64" height="64" src={{sign.image}} />
+        {{/each}}
       </marker.popup>
     </layers.marker>
   {{/each}}
