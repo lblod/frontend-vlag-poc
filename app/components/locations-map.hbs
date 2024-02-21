@@ -10,7 +10,7 @@
         {{#each point.signs as |sign|}}
           <h2>{{sign.label}}
             ({{point.latitude}},{{point.longitude}})</h2>
-          <img width="64" height="64" src={{sign.image}} />
+          <img width="auto" height="64" src={{sign.image}} />
         {{/each}}
       </marker.popup>
     </layers.marker>
