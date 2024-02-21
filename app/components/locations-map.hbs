@@ -5,6 +5,7 @@
   />
 
   {{#each @geopoints as |point|}}
+    {{log point.signs.length}}
     <layers.marker @lat={{point.latitude}} @lng={{point.longitude}} as |marker|>
       <marker.popup>
         <h2>{{point.signs.label}}
