@@ -2,6 +2,9 @@
 
 module.exports = function (environment) {
   const ENV = {
+    metis: {
+      baseUrl: "http://data.lblod.info/",
+    },
     modulePrefix: "frontend-vlag-poc",
     environment,
     rootURL: "/",
@@ -20,6 +23,9 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    fastboot: {
+      hostWhitelist: [/^localhost:\d+$/],
     },
   };
 
