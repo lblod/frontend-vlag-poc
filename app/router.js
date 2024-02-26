@@ -9,9 +9,11 @@ export default class Router extends EmberRouter {
 
 Router.map(function () {
   this.route("index", { path: "" });
+
   this.route("view", function () {
     classRoute(this, 'geopoint', {
       class: 'http://www.w3.org/2003/01/geo/wgs84_pos#Point'
+
     });
   });
   fallbackRoute(this);
