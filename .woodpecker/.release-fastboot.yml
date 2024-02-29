@@ -4,8 +4,8 @@ steps:
     settings:
       dockerfile: Dockerfile.fastboot
       repo: ${CI_REPO}
-      tags: latest
+      tags: "${CI_COMMIT_TAG##v}-fastboot"
     secrets: [docker_username, docker_password]
 when:
-  branch: development
-  event: push
+  event: tag
+  tag: v*
