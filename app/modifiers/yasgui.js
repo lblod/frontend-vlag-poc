@@ -24,6 +24,23 @@ export default modifier(
     yasgui.config.yasqe.value = defaultQuery;
     if (env.yasgui.extraPrefixes !== "{{YASGUI_EXTRA_PREFIXES}}")
       yasgui.config.yasqe.addPrefixes(JSON.parse(env.yasgui.extraPrefixes));
+
+    element.addEventListener("click", function (event) {
+      const link = event.target.closest("a"); // Table collapses long uri's. This makes only hyperlinks clickable
+      const baseUrl = env.metis.baseUrl;
+      if (link) {
+        let linkText = link.innerText;
+        let redirectUrl = "";
+        if (linkText?.startsWith(baseUrl)) {
+          redirectUrl = linkText.replace(baseUrl, "");
+          redirectUrl = redirectUrl.concat("?fastboot=false");
+          window.open(redirectUrl);
+        } else {
+          redirectUrl = `/external/?fastboot=false&resourceUri=${linkText}`;
+          window.open(redirectUrl);
+        }
+      }
+    });
   },
   { eager: false }
 );

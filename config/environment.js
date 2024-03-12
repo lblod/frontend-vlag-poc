@@ -2,14 +2,14 @@
 
 module.exports = function (environment) {
   const ENV = {
+    modulePrefix: "frontend-vlag-poc",
     metis: {
-      baseUrl: "http://mu.semte.ch/services/ldes-time-fragmenter/",
+      baseUrl: "http://data.lblod.info/",
     },
     yasgui: {
       defaultQuery: "{{YASGUI_DEFAULT-QUERY}}",
       extraPrefixes: "{{YASGUI_EXTRA_PREFIXES}}",
     },
-    modulePrefix: "frontend-vlag-poc",
     environment,
     rootURL: "/",
     locationType: "history",
