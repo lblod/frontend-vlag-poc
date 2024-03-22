@@ -1,6 +1,6 @@
 import EmberRouter from "@ember/routing/router";
 import config from "frontend-vlag-poc/config/environment";
-import { fallbackRoute } from "ember-metis";
+import { fallbackRoute, externalRoute } from "@andreo141/ember-metis";
 
 export default class Router extends EmberRouter {
   location = config.locationType;
@@ -10,6 +10,6 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route("index", { path: "" });
   this.route("sparql");
-
+  externalRoute(this); // Needs to be defined before fallbackRoute, otherwise fallbackRoute will interpret /external as wildcard path
   fallbackRoute(this);
 });

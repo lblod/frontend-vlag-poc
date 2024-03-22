@@ -1,15 +1,14 @@
-FROM madnificent/ember:4.12.0 as builder
+FROM madnificent/ember:4.12.1 as builder
 
 LABEL maintainer="info@redpencil.io"
 
-ARG SHOW_APP_VERSION_HASH=false
-
 WORKDIR /app
-COPY package.json .
-COPY package-lock.json .
+COPY package.json package-lock.json ./
 RUN npm ci
-COPY . .
-RUN ember build -prod
 
-FROM semtech/static-file-service:0.2.0
-COPY --from=builder /app/dist /data
+COPY . .
+RUN npm run build
+
+FROM redpencil/fastboot-app-server:1.2.0
+
+COPY --from=builder /app/dist /app

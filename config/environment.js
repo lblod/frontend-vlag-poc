@@ -26,7 +26,7 @@ module.exports = function (environment) {
       // when it is created
     },
     fastboot: {
-      hostWhitelist: [/^localhost:\d+$/],
+      hostWhitelist: [/^localhost(:[0-9]*)?/, "localhost", /^.*$/],
     },
   };
 
