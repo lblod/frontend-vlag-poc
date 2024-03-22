@@ -33,10 +33,9 @@ export default modifier(
         let redirectUrl = "";
         if (linkText?.startsWith(baseUrl)) {
           redirectUrl = linkText.replace(baseUrl, "");
-          redirectUrl = redirectUrl.concat("?fastboot=false");
           window.open(redirectUrl);
         } else {
-          redirectUrl = `/external/?fastboot=false&resourceUri=${linkText}`;
+          redirectUrl = `/external/?resourceUri=${linkText}`;
           window.open(redirectUrl);
         }
       }
