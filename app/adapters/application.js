@@ -5,7 +5,6 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
 
   constructor() {
     super(...arguments);
-    console.log("hallo", window.BACKEND_URL);
     if (this.fastboot.isFastBoot) {
       this.host = window.BACKEND_URL;
     }
