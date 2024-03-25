@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: "frontend-vlag-poc",
     metis: {
-      baseUrl: "http://data.lblod.info/",
+      baseUrl: "http://data.lblod.info",
     },
     yasgui: {
       defaultQuery: "{{YASGUI_DEFAULT-QUERY}}",
@@ -26,7 +26,13 @@ module.exports = function (environment) {
       // when it is created
     },
     fastboot: {
-      hostWhitelist: [/^localhost(:[0-9]*)?/, "localhost", /^.*$/],
+      hostWhitelist: [
+        /^localhost(:[0-9]*)?/,
+        "localhost",
+        /^.*$/,
+        "backend", //mu-semtech
+        "identifier", //for some reason fastboot seems to set the host header
+      ],
     },
   };
 
