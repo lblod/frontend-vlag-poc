@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: "frontend-vlag-poc",
     metis: {
-      baseUrl: "http://data.lblod.info",
+      baseUrl: "http://data.lblod.info/",
     },
     yasgui: {
       defaultQuery: "{{YASGUI_DEFAULT-QUERY}}",
