@@ -1,6 +1,6 @@
 import EmberRouter from "@ember/routing/router";
 import config from "frontend-vlag-poc/config/environment";
-import { fallbackRoute, externalRoute } from "@andreo141/ember-metis";
+import { fallbackRoute, externalRoute } from "ember-metis";
 
 export default class Router extends EmberRouter {
   location = config.locationType;
